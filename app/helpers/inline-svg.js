@@ -25,7 +25,7 @@ export function inlineSvg(path, options) {
 let helper;
 if (Ember.Helper && Ember.Helper.helper) {
   helper = Ember.Helper.helper(function(path, options) {
-    return inlineSvg(path, options);
+    return inlineSvg(Array.isArray(path) ? path[0] : path, options.hash || {});
   });
 } else {
   helper = Ember.Handlebars.makeBoundHelper(function(path, options) {
