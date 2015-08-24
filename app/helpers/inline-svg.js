@@ -24,7 +24,7 @@ export function inlineSvg(path, options) {
 
 let helper;
 if (Ember.Helper && Ember.Helper.helper) {
-  helper = Ember.Helper.helper(function([path], options) {
+  helper = Ember.Helper.helper(function(path, options) {
     return inlineSvg(path, options);
   });
 } else {
