@@ -22,7 +22,7 @@ export function inlineSvg(path, options) {
   return new Ember.Handlebars.SafeString(svg);
 }
 
-let helper;
+var helper;
 if (Ember.Helper && Ember.Helper.helper) {
   helper = Ember.Helper.helper(function(path, options) {
     return inlineSvg(Array.isArray(path) ? path[0] : path, options.hash || {});
